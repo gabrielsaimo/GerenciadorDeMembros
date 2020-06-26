@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/logo_vid"
+    tools:context=".Login">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="271dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="180dp"
+                android:background="@drawable/texts"
+                android:drawableStart="@drawable/save1"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textColorHint="#FFFFFF"
+                app:layout_constraintBottom_toTopOf="@+id/editSenha"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.551"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editSenha"
+                android:layout_width="271dp"
+                android:layout_height="46dp"
+                android:background="@drawable/texts"
+                android:layout_marginTop="20dp"
+                android:drawableStart="@drawable/usar"
+                android:textColorHint="#FFFFFF"
+                android:ems="10"
+                android:hint="Senha"
+                android:layout_gravity="center"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/btLogar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn1"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="Entrar"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="40dp"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/editEmail"
+                app:layout_constraintHorizontal_bias="0.486"
+                app:layout_constraintStart_toStartOf="@+id/editSenha"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.48000002" />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Small"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-40dp"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <Button
+                android:id="@+id/btnPul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btsemborda"
+                android:text="sem login"
+                android:textColor="#93ECE8"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btLogar"
+                app:layout_constraintHorizontal_bias="0.488"
+                app:layout_constraintStart_toStartOf="@+id/btLogar"
+                app:layout_constraintTop_toBottomOf="@+id/btLogar"
+                app:layout_constraintVertical_bias="0.214" />
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
