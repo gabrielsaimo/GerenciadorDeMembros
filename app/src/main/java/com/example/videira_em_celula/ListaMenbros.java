@@ -31,7 +31,6 @@ public class ListaMenbros extends AppCompatActivity {
         membros = dao.obterTodos();
         MembrosFiltrados.addAll(membros);
         registerForContextMenu(listView);
-       // ArrayAdapter<Membro> adaptador = new ArrayAdapter<Membro>(this, android.R.layout.simple_list_item_1,MembrosFiltrados);
         MembroAdapiter membroAdapiter = new MembroAdapiter(this,MembrosFiltrados);
         listView.setAdapter(membroAdapiter);
     }
@@ -79,8 +78,6 @@ public class ListaMenbros extends AppCompatActivity {
                 membros.remove(membrosExcluir);
                 dao.excluir(membrosExcluir);
                 listView.invalidateViews();
-                finish();
-
             }
         }).create();
         dialogo.show();
