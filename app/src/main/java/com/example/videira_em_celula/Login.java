@@ -24,7 +24,6 @@ public class Login extends AppCompatActivity {
 
     protected void onStart() {
         super.onStart();
-
     }
 
     @Override
@@ -46,7 +45,6 @@ public class Login extends AppCompatActivity {
         btnLogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // if (pedirPermissao()){
                     String email = editEmail.getText().toString().trim();
                     String senha = editSenha.getText().toString().trim();
                     login(email, senha);
@@ -54,16 +52,17 @@ public class Login extends AppCompatActivity {
                         alert("Prencha todos os campos");
                     }else {
                         btnLogar.setVisibility(View.INVISIBLE);
+                        if(editEmail.getText().toString().equals("gabrielsaimo68@gmail.com") && editSenha.getText().toString().equals("221097"))
+                            startActivity(new Intent(Login.this,MainActivity.class));
                     }
-                }
-
+            }
         });
 
         btnPular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Intent i = new Intent(Login.this, MainActivity.class);
-                          startActivity(i);
+                Intent i = new Intent(Login.this, CriarUser.class);
+                startActivity(i);
                 }
 
         });

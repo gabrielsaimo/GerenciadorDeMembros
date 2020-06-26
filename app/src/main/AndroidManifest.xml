@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListaMenbros"
+        <activity android:name=".CriarUser"></activity>
+        <activity
+            android:name=".ListaMenbros"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Cadastro"
