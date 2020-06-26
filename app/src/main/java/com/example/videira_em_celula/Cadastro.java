@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class Cadastro extends AppCompatActivity {
 
-    private EditText nome,telefone,idade,endereco;
+    private EditText nome,telefone,idade,endereco,email,batizado;
     private MenbrosDAO dao;
     private Membro membros = null;
     private Button btCadastrar;
@@ -25,6 +25,8 @@ public class Cadastro extends AppCompatActivity {
         telefone = findViewById(R.id.editTelefone);
         endereco = findViewById(R.id.editEndereco);
         idade = findViewById(R.id.editIdade);
+       email = findViewById(R.id.editText);
+       batizado = findViewById(R.id.editBatizado);
         dao = new MenbrosDAO(this);
         Intent it = getIntent();
         if(it.hasExtra("membros")){
@@ -33,6 +35,8 @@ public class Cadastro extends AppCompatActivity {
             telefone.setText(membros.getTelefone());
             endereco.setText(membros.getEndereco());
             idade.setText(membros.getData_de_nacimento());
+         email.setText(membros.getEmail());
+            batizado.setText(membros.getBatizado());
         }
     }
     public void Cadastrar(View view){
@@ -42,7 +46,8 @@ public class Cadastro extends AppCompatActivity {
         membros.setTelefone(telefone.getText().toString().trim());
         membros.setEndereco(endereco.getText().toString().trim());
         membros.setData_de_nacimento(idade.getText().toString().trim());
-        membros.setData_de_nacimento(idade.getText().toString().trim());
+        membros.setEmail(email.getText().toString().trim());
+        membros.setBatizado(batizado.getText().toString().trim());
         long id = dao.inserir(membros);
             btCadastrar.setVisibility(View.VISIBLE);
             Toast.makeText(this,"Cadastrado",Toast.LENGTH_SHORT).show();
@@ -51,6 +56,8 @@ public class Cadastro extends AppCompatActivity {
             membros.setTelefone(telefone.getText().toString());
             membros.setEndereco(endereco.getText().toString());
             membros.setData_de_nacimento(idade.getText().toString().trim());
+            membros.setEmail(email.getText().toString().trim());
+            membros.setBatizado(batizado.getText().toString().trim());
             dao.atualizar(membros);
             btCadastrar.setVisibility(View.VISIBLE);
             Toast.makeText(this,"Dabos Do Membro atualizado",Toast.LENGTH_SHORT).show();

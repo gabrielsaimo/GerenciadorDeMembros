@@ -45,13 +45,17 @@ public class MembroAdapiter extends BaseAdapter {
         TextView telefone = view.findViewById(R.id.taextnumero);
         TextView endereco = view.findViewById(R.id.textEndereco);
         TextView data = view.findViewById(R.id.textData);
+        TextView email = view.findViewById(R.id.textEmail);
+        TextView batizado = view.findViewById(R.id.textBatizado);
 
         Membro m = membros.get(position);
 
         nome.setText(m.getNome());
+        email.setText(m.getEmail());
         telefone.setText(m.getTelefone());
         endereco.setText(m.getEndereco());
         data.setText(m.getData_de_nacimento());
+        batizado.setText(m.getBatizado());
         return view;
     }
 }

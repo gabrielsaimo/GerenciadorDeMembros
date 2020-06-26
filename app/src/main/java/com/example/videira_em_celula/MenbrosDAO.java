@@ -19,36 +19,43 @@ public class MenbrosDAO {
     public long inserir(Membro membros){
         ContentValues values = new ContentValues();
         values.put("nome",membros.getNome());
+        values.put("email",membros.getEmail());
         values.put("telefone",membros.getTelefone());
         values.put("endereco",membros.getEndereco());
         values.put("idade",membros.getData_de_nacimento());
-       return banco.insert("membros",null,values);
+        values.put("batizado",membros.getBatizado());
+       return banco.insert("membro",null,values);
     }
     public List<Membro>obterTodos(){
         List<Membro>membros = new ArrayList<>();
-        Cursor cursor = banco.query("membros",new String[]{"id","nome","telefone","endereco","idade"},
+        Cursor cursor = banco.query("membro",new String[]{"id","nome","email","telefone","endereco","idade","batizado"},
                 null,null,null,null,null);
         while (cursor.moveToNext()){
             Membro m = new Membro();
             m.setId(cursor.getInt(0));
             m.setNome(cursor.getString(1));
-            m.setTelefone(cursor.getString(2));
-            m.setEndereco(cursor.getString(3));
-            m.setData_de_nacimento(cursor.getString(4));
+          //  m.setTelefone(cursor.getString(cursor.getColumnIndex("nome coluna"));
+            m.setTelefone(cursor.getString(3));
+            m.setEndereco(cursor.getString(4));
+            m.setData_de_nacimento(cursor.getString(5));
+            m.setEmail(cursor.getString(2));
+            m.setBatizado(cursor.getString(6));
             membros.add(m);
         }
         return membros;
     }
     public  void excluir(Membro m){
-        banco.delete("membros","id = ?",new String[]{m.getId().toString()});
+        banco.delete("membro","id = ?",new String[]{m.getId().toString()});
     }
 
 public void atualizar(Membro membros){
     ContentValues values = new ContentValues();
     values.put("nome",membros.getNome());
+    values.put("email",membros.getEmail());
     values.put("telefone",membros.getTelefone());
     values.put("endereco",membros.getEndereco());
     values.put("idade",membros.getData_de_nacimento());
-    banco.update("membros",values,"id = ?", new String[]{membros.getId().toString()});
+    values.put("batizado",membros.getBatizado());
+    banco.update("membro",values,"id = ?", new String[]{membros.getId().toString()});
     }
 }

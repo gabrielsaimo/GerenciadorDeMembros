@@ -9,8 +9,24 @@ private String nome;
 private String telefone;
 private String data_de_nacimento;
 private String endereco;
+private String email;
+private String batizado;
 
+    public String getBatizado() {
+        return batizado;
+    }
 
+    public void setBatizado(String batizado) {
+        this.batizado = batizado;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public Integer getId() {
     return id;

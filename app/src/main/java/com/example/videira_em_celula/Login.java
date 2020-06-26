@@ -47,7 +47,6 @@ public class Login extends AppCompatActivity {
                     login(email, senha);
                     if (TextUtils.isEmpty(email) || TextUtils.isEmpty(senha)){
                         alert("Prencha todos os campos");
-
                     }else {
                        btnLogar.setVisibility(View.INVISIBLE);
                         String res = db.ValidarLogin(email,senha);
@@ -56,7 +55,6 @@ public class Login extends AppCompatActivity {
                         }else {
                             alert("Email ou Senha incorretos");
                         }
-
                     }
             }
         });
