@@ -23,6 +23,7 @@
         android:drawableStart="@drawable/usar"
         android:background="@drawable/texts"
         android:ems="10"
+        android:textColor="#FFFFFF"
         android:hint="Nome"
         android:inputType="textPersonName"
         android:textColorHint="#FFFFFF" />
@@ -36,6 +37,7 @@
         android:drawableStart="@drawable/usar"
         android:background="@drawable/texts"
         android:ems="10"
+        android:textColor="#FFFFFF"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:textColorHint="#FFFFFF" />
@@ -49,6 +51,7 @@
         android:layout_marginTop="20dp"
         android:textColorHint="#FFFFFF"
         android:ems="10"
+        android:textColor="#FFFFFF"
         android:hint="Telefone"
         android:layout_gravity="center"
         android:inputType="phone" />
@@ -60,6 +63,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="0dp"
         android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
         android:background="@drawable/texts"
         android:drawableStart="@drawable/usar"
         android:hint="data de nacimento"
@@ -74,6 +78,7 @@
         android:hint="endreço"
         android:drawableStart="@drawable/usar"
         android:inputType="textPostalAddress"
+        android:textColor="#FFFFFF"
         android:layout_marginTop="20dp"
         android:background="@drawable/texts"
         android:textColorHint="#FFFFFF" />
@@ -86,6 +91,7 @@
         android:drawableStart="@drawable/usar"
         android:layout_marginTop="20dp"
         android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
         android:background="@drawable/texts"
         android:textColorHint="#FFFFFF" />
 
