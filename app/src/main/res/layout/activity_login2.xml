@@ -19,7 +19,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/editEmail"
+                android:id="@+id/editText"
                 android:layout_width="271dp"
                 android:layout_height="46dp"
                 android:layout_gravity="center"
@@ -63,7 +63,7 @@
                 android:textSize="16sp"
                 android:layout_gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/editEmail"
+                app:layout_constraintEnd_toEndOf="@+id/editText"
                 app:layout_constraintHorizontal_bias="0.486"
                 app:layout_constraintStart_toStartOf="@+id/editSenha"
                 app:layout_constraintTop_toTopOf="parent"

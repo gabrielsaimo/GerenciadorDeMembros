@@ -1,9 +1,6 @@
 package com.example.videira_em_celula;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.drm.DrmStore;
-import android.net.nsd.NsdManager;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -24,7 +21,7 @@ public class CriarUser extends AppCompatActivity {
 
         db= new DBLogin(this);
 
-        email = (EditText)findViewById(R.id.editEmail);
+        email = (EditText)findViewById(R.id.editText);
         senha = (EditText)findViewById(R.id.textSenha);
         confsenha = (EditText)findViewById(R.id.textConfSenha);
 

@@ -7,7 +7,7 @@
     tools:context=".CriarUser">
 
     <EditText
-        android:id="@+id/editEmail"
+        android:id="@+id/editText"
         android:layout_width="276dp"
         android:layout_height="46dp"
         android:layout_gravity="center"

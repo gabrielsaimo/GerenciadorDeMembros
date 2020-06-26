@@ -14,11 +14,11 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     String url;
     private ProgressBar progressBar;
-    private Button btnComent;
+    private Button btnComent,button22;
     private ImageButton btnestar;
     private TextView nomeDoPonto;
     private TextView StatusDoPonto;
-    public Button button;
+    public Button button21;
     public Button voltar;
     public Button irAteLocal;
     private TextView Datat;
@@ -48,9 +48,26 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        button21.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
+        button22.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, IdeiasCelula.class);
+                startActivity(i);
+            }
+        });
+
     }
     void inicializarComponentes(){
         btnComent =(findViewById(R.id.button20));
+        button22 = (findViewById(R.id.button22));
+        button21 = (findViewById(R.id.button21));
         nomeDoPonto  = (findViewById(R.id.PontNomeXML));
         StatusDoPonto =  (findViewById(R.id.StatusXML));
         voltar = (findViewById(R.id.ButtVoltarXML));

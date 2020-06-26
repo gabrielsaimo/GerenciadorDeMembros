@@ -83,7 +83,7 @@ public class Login extends AppCompatActivity {
 // INICIALIZA COMPONENTES
     private void inicializarComponentes() {
         btnLogar = (Button) findViewById(R.id.btLogar);
-        editEmail = (EditText) findViewById(R.id.editEmail);
+        editEmail = (EditText) findViewById(R.id.editText);
         editSenha = (EditText) findViewById(R.id.editSenha);
         btnPular = (Button) findViewById(R.id.btnPul);
     }
