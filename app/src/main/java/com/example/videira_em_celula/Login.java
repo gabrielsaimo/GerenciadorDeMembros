@@ -1,11 +1,7 @@
 package com.example.videira_em_celula;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Gravity;
@@ -22,6 +18,8 @@ public class Login extends AppCompatActivity {
     private EditText editEmail;
     private EditText editSenha;
 
+    DBLogin db;
+
     protected void onStart() {
         super.onStart();
     }
@@ -31,11 +29,10 @@ public class Login extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
+        db = new DBLogin(this);
         inicializarComponentes();
         eventoClicks();
             }
-
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -50,10 +47,16 @@ public class Login extends AppCompatActivity {
                     login(email, senha);
                     if (TextUtils.isEmpty(email) || TextUtils.isEmpty(senha)){
                         alert("Prencha todos os campos");
+
                     }else {
-                        btnLogar.setVisibility(View.INVISIBLE);
-                        if(editEmail.getText().toString().equals("gabrielsaimo68@gmail.com") && editSenha.getText().toString().equals("221097"))
-                            startActivity(new Intent(Login.this,MainActivity.class));
+                       btnLogar.setVisibility(View.INVISIBLE);
+                        String res = db.ValidarLogin(email,senha);
+                        if (res.equals("OK")){
+                            alert("Logando");
+                        }else {
+                            alert("Email ou Senha incorretos");
+                        }
+
                     }
             }
         });
