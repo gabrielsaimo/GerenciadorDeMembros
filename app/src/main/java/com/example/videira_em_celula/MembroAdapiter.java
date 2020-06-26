@@ -57,6 +57,7 @@ public class MembroAdapiter extends BaseAdapter {
         data.setText(m.getData_de_nacimento());
         batizado.setText(m.getBatizado());
         return view;
+
     }
 }
 

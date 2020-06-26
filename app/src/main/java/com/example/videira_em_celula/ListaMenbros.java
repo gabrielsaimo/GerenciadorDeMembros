@@ -79,6 +79,8 @@ public class ListaMenbros extends AppCompatActivity {
                 membros.remove(membrosExcluir);
                 dao.excluir(membrosExcluir);
                 listView.invalidateViews();
+                finish();
+
             }
         }).create();
         dialogo.show();
@@ -89,5 +91,7 @@ public class ListaMenbros extends AppCompatActivity {
         Intent it = new Intent(this,Cadastro.class);
         it.putExtra("membros",membrosEditar);
         startActivity(it);
+        finish();
+
     }
 }

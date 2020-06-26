@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".IdeiasCelula"></activity>
+        <activity android:name=".IdeiasCelula"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".CriarUser" />
         <activity
             android:name=".ListaMenbros"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
         <activity
             android:name=".Cadastro"
             android:theme="@style/AppTheme.NoActionBar" />

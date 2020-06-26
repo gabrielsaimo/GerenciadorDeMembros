@@ -21,6 +21,6 @@ public class One extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
-        }, 1500);
+        }, 2000);
     }
 }

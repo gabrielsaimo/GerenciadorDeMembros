@@ -1,8 +1,11 @@
 package com.example.videira_em_celula;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -35,7 +38,7 @@ public class Cadastro extends AppCompatActivity {
             telefone.setText(membros.getTelefone());
             endereco.setText(membros.getEndereco());
             idade.setText(membros.getData_de_nacimento());
-         email.setText(membros.getEmail());
+            email.setText(membros.getEmail());
             batizado.setText(membros.getBatizado());
         }
     }
@@ -51,6 +54,7 @@ public class Cadastro extends AppCompatActivity {
         long id = dao.inserir(membros);
             btCadastrar.setVisibility(View.VISIBLE);
             Toast.makeText(this,"Cadastrado",Toast.LENGTH_SHORT).show();
+            onBackPressed();
         }else{
             membros.setNome(nome.getText().toString());
             membros.setTelefone(telefone.getText().toString());
@@ -61,6 +65,9 @@ public class Cadastro extends AppCompatActivity {
             dao.atualizar(membros);
             btCadastrar.setVisibility(View.VISIBLE);
             Toast.makeText(this,"Dabos Do Membro atualizado",Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(Cadastro.this, ListaMenbros.class);
+            startActivity(i);
+            finish();
         }
     }
     private void inicializarComponentes() {
