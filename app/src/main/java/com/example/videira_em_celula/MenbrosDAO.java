@@ -22,8 +22,6 @@ public class MenbrosDAO {
         values.put("telefone",membros.getTelefone());
         values.put("endereco",membros.getEndereco());
         values.put("idade",membros.getData_de_nacimento());
-
-
        return banco.insert("membros",null,values);
     }
     public List<Membro>obterTodos(){

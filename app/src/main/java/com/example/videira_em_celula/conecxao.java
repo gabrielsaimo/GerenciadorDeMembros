@@ -8,7 +8,6 @@ public class conecxao extends SQLiteOpenHelper {
 
     private static final String name = "banco.db";
     private static final int version = 2;
-
     public conecxao( Context context) {
         super(context, name, null, version);
     }
