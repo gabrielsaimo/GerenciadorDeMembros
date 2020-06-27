@@ -1,9 +1,13 @@
-package com.example.videira_em_celula;
+package com.example.videira_em_celula.Banco_de_dados;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.example.videira_em_celula.Banco_de_dados.conecxao;
+import com.example.videira_em_celula.Membro;
+
 import java.util.ArrayList;
 import java.util.List;
 

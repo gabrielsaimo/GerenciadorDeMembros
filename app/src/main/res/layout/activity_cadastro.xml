@@ -84,9 +84,9 @@
         android:textColorHint="#FFFFFF" />
     <EditText
         android:id="@+id/editBatizado"
-        android:layout_width="271dp"
-        android:layout_height="46dp"
-        android:layout_gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="end"
         android:hint="Batizado?"
         android:drawableStart="@drawable/usar"
         android:layout_marginTop="20dp"
@@ -94,6 +94,33 @@
         android:textColor="#FFFFFF"
         android:background="@drawable/texts"
         android:textColorHint="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/edit"
+            android:layout_width="271dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:drawableStart="@drawable/usar"
+            android:inputType="textPersonName"
+            android:text="Batizado:"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="18sp" />
+        <CheckBox
+            android:id="@+id/checkBoxSim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="-48dp"
+            android:text="Sim" />
+        <CheckBox
+            android:id="@+id/checkBoxNao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="-32dp"
+            android:text="Não" />
 
     <Button
         android:id="@+id/btCadastrar"
@@ -117,5 +144,6 @@
         android:layout_marginTop="-40dp"
         app:layout_constraintVertical_bias="0.25" />
     </LinearLayout>
+
 
 </FrameLayout >

@@ -1,4 +1,4 @@
-package com.example.videira_em_celula;
+package com.example.videira_em_celula.Banco_de_dados;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

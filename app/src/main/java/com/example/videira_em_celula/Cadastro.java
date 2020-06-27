@@ -1,20 +1,21 @@
 package com.example.videira_em_celula;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.videira_em_celula.Banco_de_dados.MenbrosDAO;
 
 public class Cadastro extends AppCompatActivity {
 
     private EditText nome,telefone,idade,endereco,email,batizado;
+    private CheckBox checkBoxSim,checkBoxNao;
     private MenbrosDAO dao;
     private Membro membros = null;
     private Button btCadastrar;
@@ -25,6 +26,8 @@ public class Cadastro extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro);
         inicializarComponentes();
         nome = findViewById(R.id.editNome);
+        checkBoxSim = findViewById(R.id.checkBoxSim);
+        checkBoxNao = findViewById(R.id.checkBoxNao);
         telefone = findViewById(R.id.editTelefone);
         endereco = findViewById(R.id.editEndereco);
         idade = findViewById(R.id.editIdade);
@@ -42,8 +45,20 @@ public class Cadastro extends AppCompatActivity {
             batizado.setText(membros.getBatizado());
         }
     }
+
+    public void checkbox(){
+        String Texto = "";
+        if(checkBoxSim.isChecked()){
+            Texto = "SIM";
+        }if(checkBoxNao.isChecked()){
+            Texto = "Não";
+        }
+        batizado.setText(Texto);
+    }
+
     public void Cadastrar(View view){
         if(membros == null){
+            checkbox();
         membros = new Membro();
         membros.setNome(nome.getText().toString().trim());
         membros.setTelefone(telefone.getText().toString().trim());
